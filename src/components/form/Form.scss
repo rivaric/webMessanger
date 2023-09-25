@@ -1,0 +1,116 @@
+.window-login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+
+  width: 1080px;
+  height: 650px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow:
+    -11.53333px 11.53333px 11.53333px 0px rgba(255, 255, 255, 0.5) inset,
+    11.53333px -11.53333px 11.53333px 0px rgba(214, 214, 214, 0.5) inset;
+  backdrop-filter: blur(100.33999633789062px);
+}
+
+.form-wrapper {
+  width: 434px;
+  height: 650px;
+  padding: 90px 40px 90px 70px;
+  border-radius: 25px;
+  background: #fdfbfb;
+  box-shadow:
+    -6.9px 6.9px 6.9px 0px rgba(255, 255, 255, 0.6) inset,
+    6.9px -6.9px 6.9px 0px rgba(205, 205, 205, 0.6) inset;
+  backdrop-filter: blur(103.5px);
+  // transform: translateX(-434px);
+  & form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+  & .title {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  & .logo {
+    &-img {
+      width: 90px;
+      height: 90px;
+      background-color: #d9d9d9;
+      border-radius: 100%;
+    }
+    &-text {
+      width: 200px;
+      color: #47437c;
+      text-align: left;
+      font-family: Poppins;
+      font-size: 35px;
+      font-weight: 700;
+    }
+  }
+  & .form {
+    &-input {
+      width: 290px;
+      height: 44px;
+      padding-left: 10px;
+      border-radius: 10px;
+      border: 2px solid #ebebeb;
+      background: rgba(255, 255, 255, 0.64);
+    }
+    &-button {
+      color: #47437c;
+      text-align: center;
+      font-family: Poppins;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      width: 288px;
+      height: 44px;
+      background: rgba(229, 224, 224, 0.64);
+      border-radius: 10px;
+      margin-bottom: 40px;
+    }
+  }
+  & .label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    color: #47437c;
+    font-family: League Spartan;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    color: #47437c;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    & .link {
+      color: #47437c;
+      font-family: Poppins;
+      font-size: 14px;
+      font-style: italic;
+      font-weight: 700;
+      line-height: normal;
+    }
+  }
+}
