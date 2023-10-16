@@ -1,64 +1,27 @@
-interface Questions {
-  question: string;
-  link: string;
-}
-
-interface FormProps {
-  title: string;
-  inputs: string[];
-  buttonText: string;
-  info: Questions[];
-  picture?: string;
-}
-
+import { useLocation } from 'react-router-dom';
+import { FormProps } from './Form.interface';
 import './Form.scss';
 
 export function Form({ inputs, title, buttonText, info, picture }: FormProps) {
+  const location = useLocation();
+
   return (
-    <div
-      className="window-login"
-      style={{
-        flexDirection: `${inputs[0] == 'Username' ? 'row-reverse' : 'row'}`
-      }}>
-      <img
-        src={picture}
-        alt="picture"
-        style={{
-          transform: `translateX(${inputs[0] == 'Username' ? '-50px' : {}})`
-        }}
-      />
-      <div
-        className="form-wrapper"
-        style={{
-          paddingTop: `${inputs[0] == 'Username' ? '45px' : {}}`
-        }}>
-        <div
-          className="title"
-          style={{
-            marginBottom: `${inputs[0] == 'Username' ? '20px' : {}}`
-          }}>
+    <div className={`window-login ${location.pathname == '/register' ? 'register' : {}}`}>
+      <img src={picture} alt="picture" />
+      <div className="form-wrapper">
+        <div className="title">
           <div className="logo-img"></div>
           <h1 className="logo-text">{title}</h1>
         </div>
-        <form
-          style={{
-            gap: `${inputs[0] == 'Username' ? '10px' : {}}`,
-            marginBottom: `${inputs[0] == 'Username' ? '30px' : {}}`
-          }}>
+        <form>
           {inputs.map((name, i) => (
-            <label className="label" htmlFor={name} key={i}>
-              {name}
-              <input className="form-input" type="text" placeholder={name} name={name} />
+            <label className="label" key={i}>
+              <>{name}</>
+              <input className="form-input" type="text" placeholder={name} />
             </label>
           ))}
+          <button className="form-button">{buttonText}</button>
         </form>
-        <button
-          className="form-button"
-          style={{
-            marginBottom: `${inputs[0] == 'Username' ? '30px' : {}}`
-          }}>
-          {buttonText}
-        </button>
         <ul className="info">
           {info.map(({ question, link }, i) => (
             <li key={i}>

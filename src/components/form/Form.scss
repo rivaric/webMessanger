@@ -27,12 +27,11 @@
     -6.9px 6.9px 6.9px 0px rgba(255, 255, 255, 0.6) inset,
     6.9px -6.9px 6.9px 0px rgba(205, 205, 205, 0.6) inset;
   backdrop-filter: blur(103.5px);
-  // transform: translateX(-434px);
   & form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
   }
   & .title {
     display: flex;
@@ -77,7 +76,7 @@
       height: 44px;
       background: rgba(229, 224, 224, 0.64);
       border-radius: 10px;
-      margin-bottom: 40px;
+      margin-top: 30px;
     }
   }
   & .label {
@@ -113,5 +112,25 @@
       font-weight: 700;
       line-height: normal;
     }
+  }
+}
+
+.register {
+  flex-direction: row-reverse;
+  & img {
+    transform: translateX(-50px);
+  }
+  & .form-wrapper {
+    padding-top: 45px;
+    & .title {
+      margin-bottom: 20px;
+    }
+  }
+  & form {
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  & .form-button {
+    margin-top: 15px;
   }
 }
