@@ -3,6 +3,13 @@ interface Questions {
   link: string;
 }
 
+export interface Inputs {
+  Username: string;
+  Email: string;
+  Password: string;
+  ConfirmPassword: string;
+}
+
 export interface FormProps {
   title: string;
   inputs: string[];

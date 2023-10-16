@@ -1,9 +1,18 @@
 import { useLocation } from 'react-router-dom';
-import { FormProps } from './Form.interface';
+import { FormProps, Inputs } from './Form.interface';
 import './Form.scss';
+import { useForm, SubmitHandler, Path } from 'react-hook-form';
+import { Error } from '../error/Error';
 
 export function Form({ inputs, title, buttonText, info, picture }: FormProps) {
   const location = useLocation();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm<Inputs>({ mode: 'onBlur' });
+
+  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
   return (
     <div className={`window-login ${location.pathname == '/register' ? 'register' : {}}`}>
@@ -13,11 +22,20 @@ export function Form({ inputs, title, buttonText, info, picture }: FormProps) {
           <div className="logo-img"></div>
           <h1 className="logo-text">{title}</h1>
         </div>
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           {inputs.map((name, i) => (
             <label className="label" key={i}>
-              <>{name}</>
-              <input className="form-input" type="text" placeholder={name} />
+              <p>{name}</p>
+              <input
+                className="form-input"
+                placeholder={name}
+                {...register(name as Path<Inputs>, {
+                  required: 'Объязательно к заполнению'
+                })}
+              />
+              {errors[name as Path<Inputs>] ? (
+                <Error message={errors[name as Path<Inputs>]?.message} />
+              ) : null}
             </label>
           ))}
           <button className="form-button">{buttonText}</button>
