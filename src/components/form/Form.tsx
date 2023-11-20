@@ -1,8 +1,9 @@
-import { useLocation } from 'react-router-dom';
 import { FormProps, Inputs } from './Form.interface';
-import './Form.scss';
-import { useForm, SubmitHandler, Path } from 'react-hook-form';
 import { Error } from '../error/Error';
+import './Form.scss';
+
+import { useLocation } from 'react-router-dom';
+import { useForm, SubmitHandler, Path } from 'react-hook-form';
 
 export function Form({ inputs, title, buttonText, info, picture }: FormProps) {
   const location = useLocation();
@@ -15,7 +16,7 @@ export function Form({ inputs, title, buttonText, info, picture }: FormProps) {
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
   return (
-    <div className={`window-login ${location.pathname == '/register' ? 'register' : {}}`}>
+    <div className={`window-login ${location.pathname === '/register' ? 'register' : {}}`}>
       <img src={picture} alt="picture" />
       <div className="form-wrapper">
         <div className="title">

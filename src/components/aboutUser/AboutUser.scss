@@ -1,0 +1,65 @@
+.about-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 252px;
+    background: rgba(255, 255, 255, 0.66);
+    padding-top: 40px;
+    padding-bottom: 30px;
+
+    h1 {
+        color: #47437C;
+        font-size: 38px;
+        font-weight: 700;
+        margin-bottom: 70px;
+    }
+
+    .btn-send {
+        width: 240px;
+        height: 50px;
+        background-color: #fff;
+        border-radius: 10px;
+
+        color: #47437C;
+        font-size: 20px;
+        font-weight: 700;
+
+        margin-bottom: 30px;
+    }
+
+    .send {
+        &-wrapper {
+            width: 100%;
+    
+            color: #47437C;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        &-select {
+            & li {
+                height: 50px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+
+            }
+        }
+    }
+
+    .btn-add-black {
+        width: 240px;
+        height: 50px;
+        background-color: #fff;
+        border-radius: 10px;
+
+        color: #47437C;
+        font-size: 16px;
+        font-weight: 700;
+
+        margin-top: auto;
+    }
+}
