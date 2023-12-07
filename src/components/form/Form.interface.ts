@@ -4,10 +4,9 @@ interface Questions {
 }
 
 export interface Inputs {
-  Username: string;
-  Email: string;
-  Password: string;
-  ConfirmPassword: string;
+  username: string;
+  email: string;
+  password: string;
 }
 
 export interface FormProps {

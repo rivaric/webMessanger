@@ -4,7 +4,7 @@ import picture from './img/Picture.png';
 export function Register() {
   return (
     <Form
-      inputs={['Username', 'Email', 'Password', 'Confirm password']}
+      inputs={['username', 'email', 'password']}
       title="Create new account"
       buttonText="Sign Up"
       info={[

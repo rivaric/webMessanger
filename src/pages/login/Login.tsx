@@ -4,7 +4,7 @@ import picture from './img/Picture.png';
 export function Login() {
   return (
     <Form
-      inputs={['Email', 'Password']}
+      inputs={['username', 'password']}
       title="Login to your account"
       buttonText="Sign In"
       info={[
