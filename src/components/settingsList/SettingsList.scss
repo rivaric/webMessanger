@@ -1,0 +1,58 @@
+.settings {
+  height: 100%;
+  width: 420px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow:
+    -8.073px 8.073px 8.073px 0px rgba(255, 255, 255, 0.6) inset,
+    8.073px -8.073px 8.073px 0px rgba(214, 214, 214, 0.6) inset;
+  backdrop-filter: blur(121.0999984741211px);
+  padding: 30px 40px;
+
+  h1 {
+    color: #47437c;
+    font-size: 40px;
+    font-weight: 700;
+    padding: 0px 25px;
+    margin-bottom: 20px;
+  }
+
+  .search-settings {
+    width: 100%;
+    height: 45px;
+
+    color: rgba(71, 67, 124, 0.63);
+    font-size: 15px;
+    font-weight: 700;
+
+    border-radius: 10px;
+    border: 2px solid #47437c;
+    // background: url('./icon/search-icon.svg') no-repeat left;
+    background-size: 40px;
+
+    padding-left: 40px;
+    margin-bottom: 30px;
+  }
+
+  .change-profile {
+    width: 347px;
+    height: 69px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    color: #47437c;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+
+    border-radius: 10px;
+    flex-shrink: 0;
+    fill: rgba(71, 67, 124, 0.1);
+    box-shadow:
+      -2.607px 2.607px 2.607px 0px rgba(255, 255, 255, 0.6) inset,
+      2.607px -2.607px 2.607px 0px rgba(169, 163, 190, 0.6) inset;
+    backdrop-filter: blur(31.67099952697754px);
+  }
+}

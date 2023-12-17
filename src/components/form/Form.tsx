@@ -9,6 +9,8 @@ import { ApiLogin } from '../../api/Login';
 import { useUserStore } from '../../store/useUserStore';
 import { useGlobalStore } from '../../store/useGlobalStore';
 import { Spiner } from '../spiner/Spiner';
+import { getUserData } from '../../api/getUserData';
+import { Logo } from '../../images/Logo';
 // import { getUserData } from '../../api/getUserData';
 
 export function Form({ inputs, title, buttonText, info, picture }: FormProps) {
@@ -24,11 +26,11 @@ export function Form({ inputs, title, buttonText, info, picture }: FormProps) {
   const isLoading = useGlobalStore((state) => state.isLoading);
   const setIsLoading = useGlobalStore((state) => state.setIsLoading);
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
+  const onSubmit: SubmitHandler<Inputs> = (inputs) => {
     setIsLoading(true);
-    console.log(data);
+    console.log(inputs);
     location.pathname === '/register'
-      ? ApiRegister(data)
+      ? ApiRegister(inputs)
           .then(({ data }) => {
             setUser(data);
             console.log(user);
@@ -38,12 +40,19 @@ export function Form({ inputs, title, buttonText, info, picture }: FormProps) {
             console.log(data);
             setIsLoading(false);
           })
-      : ApiLogin(data)
+      : ApiLogin(inputs)
           .then(({ data }) => {
             localStorage.setItem('accses_token', data.auth_token);
-            navigate('/main');
-            console.log(user);
+            navigate('/messages');
             setIsLoading(false);
+            getUserData()
+              .then(({ data }) => {
+                console.log(data);
+                setUser(data);
+              })
+              .catch((data) => {
+                console.log(data);
+              });
           })
           .catch((data) => {
             console.log(data);
@@ -60,7 +69,7 @@ export function Form({ inputs, title, buttonText, info, picture }: FormProps) {
         ) : (
           <>
             <div className="title">
-              <div className="logo-img"></div>
+              <Logo />
               <h1 className="logo-text">{title}</h1>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>

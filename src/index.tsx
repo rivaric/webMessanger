@@ -2,11 +2,12 @@ import './index.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Layout } from './pages/layout/Layout';
 import { Login } from './pages/login/Login';
-import { Main } from './pages/main/Main';
+import { Messages } from './pages/messages/Messages';
 import { Register } from './pages/register/Register';
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Settings from './pages/settings/Settings';
 
 const router = createBrowserRouter([
   {
@@ -22,8 +23,12 @@ const router = createBrowserRouter([
         element: <Register />
       },
       {
-        path: 'main',
-        element: <Main />
+        path: 'messages',
+        element: <Messages />
+      },
+      {
+        path: 'settings',
+        element: <Settings />
       }
     ]
   }

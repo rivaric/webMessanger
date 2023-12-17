@@ -1,0 +1,18 @@
+# Используем официальный образ Node.js
+FROM node:14-alpine
+
+# Устанавливаем рабочую директорию внутри контейнера
+WORKDIR /usr/src/app
+
+# Копируем файлы package.json и package-lock.json (если есть)
+COPY package*.json ./
+
+# Устанавливаем зависимости
+RUN npm install
+
+# Копируем все файлы из текущего каталога (где находится Dockerfile) внутрь контейнера
+COPY . .
+
+# Собираем приложение
+RUN npm run build
+

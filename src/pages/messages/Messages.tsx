@@ -1,4 +1,4 @@
-import './Main.scss';
+import './Messages.scss';
 
 import { ChatsList } from '../../components/chatsList/ChatsList';
 import { NavBar } from '../../components/navbar/Navbar';
@@ -7,7 +7,7 @@ import { AboutUser } from '../../components/aboutUser/AboutUser';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export function Main() {
+export function Messages() {
   const navigate = useNavigate();
 
   useEffect(() => {

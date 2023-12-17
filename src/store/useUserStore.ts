@@ -1,10 +1,16 @@
 /* eslint-disable */
 import { create } from 'zustand';
 
+interface Room {
+  id: string | null;
+  name: string | null;
+}
+
 export interface User {
-  id: number | null;
-  email: string | null;
-  username: string | null;
+  username: string;
+  profile_pic: string;
+  rooms: Room[];
+  birthdate: string;
 }
 
 interface useUserStore {
@@ -14,9 +20,10 @@ interface useUserStore {
 
 export const useUserStore = create<useUserStore>((set) => ({
   user: {
-    id: null,
-    email: null,
-    username: null
+    username: '',
+    profile_pic: '',
+    rooms: [],
+    birthdate: ''
   },
   setUser: (user) => set(() => ({ user }))
 }));

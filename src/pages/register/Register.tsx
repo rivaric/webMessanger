@@ -5,12 +5,9 @@ export function Register() {
   return (
     <Form
       inputs={['username', 'email', 'password']}
-      title="Create new account"
+      title="Create account"
       buttonText="Sign Up"
-      info={[
-        { question: 'Do you already have an account?', link: 'Sign In' },
-        { question: 'Do you have any questions?', link: 'Support' }
-      ]}
+      info={[{ question: 'Do you already have an account?', link: 'Sign In' }]}
       picture={picture}
     />
   );

@@ -1,12 +1,15 @@
 import './ChatItem.scss';
 
-export function ChatItem() {
+interface ChatItemInterface {
+  name: string | null;
+}
+
+export function ChatItem({ name }: ChatItemInterface) {
   return (
     <div className="chat">
       <div className="chat-img"></div>
       <div className="chat-descr">
-        <div className="chat-title">Title</div>
-        <div className="chat-last-message">message</div>
+        <div className="chat-title">{name}</div>
       </div>
     </div>
   );

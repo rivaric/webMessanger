@@ -1,46 +1,134 @@
-# Getting Started with Create React App
+# Документация проекта "web-messenger"
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Описание проекта
 
-## Available Scripts
+"web-messenger" - это веб-приложение для обмена сообщениями, разработанное с использованием технологий React, TypeScript и других современных библиотек. Проект предоставляет функциональности мессенджера, а также использует инструменты для тестирования, линтинга и форматирования кода.
 
-In the project directory, you can run:
+## Установка
 
-### `yarn start`
+Прежде чем начать работу с проектом, убедитесь, что у вас установлен Node.js и npm. Выполните следующие шаги:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. **Клонирование репозитория:**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+   ```bash
+   git clone <repository-url>
+   ```
 
-### `yarn test`
+2. **Переход в директорию проекта:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```bash
+   cd web-messenger
+   ```
 
-### `yarn build`
+3. **Установка зависимостей:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Запуск
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Для запуска приложения в режиме разработки используйте команду:
 
-### `yarn eject`
+```bash
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Сборка
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Для создания оптимизированной сборки приложения выполните:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm run build
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Собранные файлы будут находиться в директории build.
 
-## Learn More
+# Линтинг и форматирование кода
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Проект использует ESLint и Prettier для поддержания стиля кода. Доступны следующие скрипты:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Запуск ESLint и Prettier:
+
+```bash
+npm run lint
+```
+
+- Запуск ESLint с автоматическим исправлением ошибок:
+
+```bash
+npm run lint:fix
+```
+
+- Форматирование кода с помощью Prettier:
+
+```bash
+npm run format
+```
+
+# Структура приложения
+
+## src
+- **index.js (или index.tsx)**: Входная точка приложения, где происходит рендеринг корневого компонента в DOM.
+
+- **components**: Директория для хранения множества маленьких, переиспользуемых компонентов.
+
+- **pages**: Если приложение имеет множество страниц, каждая страница может быть размещена в этой директории.
+
+- **api**: Директория для хранения логики, связанной с взаимодействием с внешними данными или API.
+
+- **images**: Место хранение переиспользуемых изображений
+
+- **store**: Содержит файлы и папки, связанные с управлением состоянием (state management) в приложении. Обычно, здесь хранятся сторы, которые управляют состоянием и данными приложения
+
+## public
+- **index.html**: Основной HTML-файл, в который будет вставляться корневой компонент React. Здесь вы можете добавить мета-теги, стили или другие статические элементы.
+- **favicon.ico**: Иконка, отображаемая во вкладке браузера.
+
+## node_modules
+- Директория, в которой устанавливаются зависимости проекта с помощью инструмента управления пакетами, такого как npm или Yarn.
+
+## package.json
+- Файл, содержащий метаинформацию о проекте, а также зависимости и скрипты для управления проектом.
+
+## package-lock.json (или yarn.lock)
+- Файлы, создаваемые инструментами управления пакетами для фиксации версий зависимостей.
+
+## .gitignore
+- Файл, указывающий, какие файлы и директории должны быть проигнорированы системой контроля версий Git.
+
+## README.md
+- Файл, содержащий описание проекта, инструкции по установке и запуску, а также другую полезную информацию.
+
+# Страницы приложения
+
+В этом разделе описаны основные страницы приложения и их функциональность.
+
+## Страница "Login"
+
+Страница "Login" предназначена для аутентификации пользователей. Ниже представлено краткое описание основных элементов страницы:
+
+- **Форма входа**: Включает поля для ввода логина и пароля.
+- **Кнопка "Войти"**: Инициирует процесс входа в систему.
+- **Ссылка "Регистрация"**: Перенаправляет пользователя на страницу регистрации.
+
+## Страница "Registration"
+
+Страница "Registration" предназначена для создания нового аккаунта в приложении. Краткое описание элементов страницы:
+
+- **Форма регистрации**: Включает поля для ввода информации, такой как имя, электронная почта и пароль.
+- **Кнопка "Зарегистрироваться"**: Инициирует процесс создания нового аккаунта.
+- **Ссылка "Уже есть аккаунт? Войти"**: Перенаправляет пользователя на страницу входа.
+
+## Страница "Messages"
+
+Страница "Messages" предоставляет пользователю доступ к переписке и обмену сообщениями. Краткое описание элементов страницы:
+
+- **Список чатов**: Перечисляет контакты пользователя.
+- **Область чата**: Отображает переписку с выбранным контактом.
+
+## Страница "Settings"
+
+Страница "Settings" предоставляет пользователю возможность настройки параметров приложения и аккаунта. Краткое описание элементов страницы:
+
+- **Настройки профиля**: Позволяют пользователю изменять информацию в своем профиле, такую как фотография, имя и дату рождения.

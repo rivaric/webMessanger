@@ -13,7 +13,7 @@ export const ApiRegister = ({
   username,
   password
 }: Register): Promise<AxiosResponse<User>> => {
-  return axios.post(`${PUBLIC_URL}/auth/users`, {
+  return axios.post(`${PUBLIC_URL}/auth/users/`, {
     email,
     username,
     password
