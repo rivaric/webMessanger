@@ -1,0 +1,62 @@
+.background {
+  margin-top: 20px;
+  width: 380px;
+  height: 146px;
+  fill: rgba(255, 255, 255, 0.7);
+  box-shadow:
+    -2.607px 2.607px 2.607px 0px rgba(255, 255, 255, 0.6) inset,
+    2.607px -2.607px 2.607px 0px rgba(169, 163, 190, 0.6) inset;
+  backdrop-filter: blur(31.67099952697754px);
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  .create {
+    flex-grow: 1;
+    width: 280px;
+    height: 44px;
+    color: #47437c;
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  .add {
+    width: 280px;
+    height: 44px;
+    padding: 0px 20px 0 10px;
+
+    border-radius: 10px;
+    border: 2px solid #47437c;
+    background: rgba(255, 255, 255, 0.01);
+  }
+
+  hr {
+    background: #000;
+    width: 90%;
+    height: 2px;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .create-btn {
+    width: 50px;
+    height: 30px;
+    background: #000;
+
+    border-radius: 30px;
+    background: rgba(163, 155, 183, 0.2);
+    box-shadow:
+      -0.667px 0.667px 0.667px 0px rgba(255, 255, 255, 0.6) inset,
+      0.667px -0.667px 0.667px 0px rgba(137, 130, 154, 0.6) inset;
+    backdrop-filter: blur(10px);
+  }
+}

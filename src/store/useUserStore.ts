@@ -2,7 +2,7 @@
 import { create } from 'zustand';
 
 interface Room {
-  id: string | null;
+  id: number | null;
   name: string | null;
 }
 
@@ -16,6 +16,7 @@ export interface User {
 interface useUserStore {
   user: User;
   setUser: (value: User) => void;
+  addRooms: (value: Room) => void;
 }
 
 export const useUserStore = create<useUserStore>((set) => ({
@@ -25,5 +26,13 @@ export const useUserStore = create<useUserStore>((set) => ({
     rooms: [],
     birthdate: ''
   },
-  setUser: (user) => set(() => ({ user }))
+  setUser: (user) => set(() => ({ user })),
+  addRooms: (newRooms) =>
+    set((state) => {
+      const updatedRooms = Array.isArray(newRooms)
+        ? [...state.user.rooms, ...newRooms]
+        : [...state.user.rooms, newRooms];
+
+      return { user: { ...state.user, rooms: updatedRooms } };
+    })
 }));
